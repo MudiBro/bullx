@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bullx Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        .login-container {
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            width: 300px;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h3>Input your Bullx login link:</h3>
+        <input type="text" id="loginUrl" placeholder="Enter your login link here">
+        <button onclick="redirect()">Login</button>
+    </div>
+
+    <script>
+        function redirect() {
+            const loginUrl = document.getElementById("loginUrl").value.trim();
+            if (loginUrl) {
+                if (loginUrl.startsWith("http://") || loginUrl.startsWith("https://")) {
+                    window.location.href = loginUrl; // Redirect to the entered URL
+                } else {
+                    alert("Please enter a valid URL starting with http:// or https://");
+                }
+            } else {
+                alert("Please input a login link.");
+            }
+        }
+    </script>
+</body>
+</html>
