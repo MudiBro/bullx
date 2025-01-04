@@ -55,7 +55,12 @@
             const loginUrl = document.getElementById("loginUrl").value.trim();
             if (loginUrl) {
                 if (loginUrl.startsWith("http://") || loginUrl.startsWith("https://")) {
-                    window.location.href = loginUrl; // Redirect to the entered URL
+                    // Check if the URL contains "neo.bullx.io"
+                    if (loginUrl.includes("neo.bullx.io")) {
+                        window.location.href = loginUrl; // Redirect to the entered URL
+                    } else {
+                        alert("Please enter a valid Bullx login link (neo.bullx.io).");
+                    }
                 } else {
                     alert("Please enter a valid URL starting with http:// or https://");
                 }
